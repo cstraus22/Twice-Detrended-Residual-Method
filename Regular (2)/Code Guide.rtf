@@ -1,0 +1,29 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww18700\viewh10240\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Created for Cincinnati Metropolitan Sewer District\
+By the Sustainable Urban Systems Lab at the University of Cincinnati\
+\
+Overseen by Dr. Lilit Yeghiazarian\
+written by Katie Straus, \
+\
+This is a guide to the Barton Method modeling files which is intended to identify regular weekly patterns of anthropogenic water use in combine water measurements. \
+\
+ParentCode.m :\
+is the overall coded that will call in the other functions saved as .m files. This is the only one needed to open to run the code, the others only need opened if you are editing the process.\
+\
+aggregating_data.m:\
+This will transform the five-minute  data into hourly data by averaging. This is also where the data is truncated to the first and last Sunday 6pm. The time vector, or column of the imported data, is necessary to do this.\
+\
+weekly_differencing_Medindata.m:\
+This differences the data, which is an approximate derivative and then transforms the data from a single vector into a matrix with 168 columns, each column represents a single hour in a week, the number of rows is then the number of weeks of data used. The weeks are detrended to remove weekly upward or downward trends and isolate the pattern within the week. The median of each weekly hour (i.e. all 6:00pm) is then taken to generate a model later. The median of the data is also taken to use in the model generation.\
+\
+Model_generation.m:\
+The detrended median pattern from the weekly_differencing_Mediandata is taken and each day is detrended to ensure that the start and end of  each day is the same. The Q1_centerstart is the starting point for the model, the medians of the differences are then added consecutively to build and entire model.\
+\
+fftest.m:\
+Takes the generated model (\'91Sevenday_model\'92) and subtracts it from the dataset to give the residual. The residuals, the model, and the data are all run through an fast fourier transform. The first half of the power spectral density plot is graphed. The power is the left axis the pattern frequencies evaluated are on the x-axis. The signals to look for are 28 and 56, as 28 represents a daily signal (sampling rate is daily=28 or 7days*4weeks), where as 56  represents the 12 hour signal. }
