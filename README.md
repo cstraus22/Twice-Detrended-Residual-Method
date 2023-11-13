@@ -6,7 +6,9 @@ Steps to run code:
 Either download the code and datasets or clone the repository.
 
 Open file named ParentCode.m
+
   -all other codes are run from this. The other codes can be modified and then run from this code.
+  
   -Run each line of the code, it should ask you to select which dataset you would like analyze. 
 
   -The code is all replicated in the smoothing folder so the steps are the same.
