@@ -1,5 +1,5 @@
 %%Barton Method for Evaluating Flow Data
-% Katie Straus (katie.straus@gmail.com), Lilit Yeghiazarian (yeghialt@ucmail.uc.edu)
+% Katie Straus (katie.straus@gmail.com), Lilit Yeghiazarian (yeghialt@ucmail.uc.edu), Sadegh Riasi (riasimh@ucmail.uc.edu)
 % Department of Biomedical, Chemical and Environmental Engineering, University of Cincinnati, Cincinnati, OH, USA 
 
 clear
